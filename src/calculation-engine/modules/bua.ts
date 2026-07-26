@@ -1,0 +1,49 @@
+// ============================================================
+// BUA MODULE – Built-up Area Calculations
+// BBMP/BDA FAR & coverage rules
+// ============================================================
+
+import { EngineInput, AreaResult } from '../types';
+import {
+  COVERAGE_FACTOR,
+  FLOOR_EFFICIENCY,
+  SUPER_BUA_FACTOR,
+} from '../data/coefficients';
+
+export function calculateArea(input: EngineInput): AreaResult {
+  const { plotLength, plotWidth, floors, parkingType, carCount } = input;
+
+  const plotAreaSqFt = plotLength * plotWidth;
+
+  // BBMP: Ground coverage max 60% of plot area
+  const buildableAreaSqFt = Math.round(plotAreaSqFt * COVERAGE_FACTOR);
+
+  // Usable floor plate per storey
+  const buaPerFloorSqFt = Math.round(buildableAreaSqFt * FLOOR_EFFICIENCY);
+
+  // Total BUA across all floors
+  const totalBUASqFt = Math.round(buaPerFloorSqFt * floors);
+
+  // Super BUA = BUA + 15% (walls, common areas, shaft)
+  const superBUASqFt = Math.round(totalBUASqFt * SUPER_BUA_FACTOR);
+
+  // Parking area
+  const sqFtPerCar = parkingType === 'Stilt Parking' ? 180 : 120;
+  const parkingAreaSqFt = Math.round(carCount * sqFtPerCar + (input.bikeCount * 35));
+
+  // Terrace (top slab exposed area)
+  const terraceSqFt = buildableAreaSqFt;
+
+  const totalConstructedSqFt = totalBUASqFt + parkingAreaSqFt + terraceSqFt;
+
+  return {
+    plotAreaSqFt,
+    buildableAreaSqFt,
+    buaPerFloorSqFt,
+    totalBUASqFt,
+    superBUASqFt,
+    parkingAreaSqFt,
+    terraceSqFt,
+    totalConstructedSqFt,
+  };
+}

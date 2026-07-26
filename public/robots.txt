@@ -1,0 +1,11 @@
+# http://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Allow: /planner
+Allow: /dashboard
+Allow: /report
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://buniyad.app/sitemap.xml

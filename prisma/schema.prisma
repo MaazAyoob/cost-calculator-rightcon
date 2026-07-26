@@ -1,0 +1,100 @@
+// Project Buniyad - Prisma Database Schema Definition
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  HOMEOWNER
+  ARCHITECT
+  CONTRACTOR
+  ADMIN
+}
+
+enum QualityGrade {
+  STANDARD
+  PREMIUM
+  LUXURY
+}
+
+enum ProjectStatus {
+  DRAFT
+  PLANNING
+  BOQ_APPROVED
+  CONSTRUCTION_READY
+  IN_PROGRESS
+  COMPLETED
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  fullName     String
+  phoneNumber  String?
+  role         Role      @default(HOMEOWNER)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  projects     Project[]
+
+  @@map("users")
+}
+
+model Project {
+  id              String         @id @default(uuid())
+  ownerId         String
+  owner           User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  title           String
+  city            String
+  state           String
+  pincode         String
+  plotLengthFt    Float
+  plotWidthFt     Float
+  builtUpAreaSqFt Float
+  floors          Int
+  qualityGrade    QualityGrade   @default(PREMIUM)
+  status          ProjectStatus  @default(PLANNING)
+  totalBOQAmount  Float          @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  materials       MaterialTier[]
+  milestones      PaymentStage[]
+
+  @@map("projects")
+}
+
+model MaterialTier {
+  id                String       @id @default(uuid())
+  projectId         String
+  project           Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  category          String
+  materialName      String
+  brand             String
+  unit              String
+  estimatedQuantity Float
+  unitRate          Float
+  totalCost         Float
+  selectedTier      QualityGrade @default(PREMIUM)
+
+  @@map("material_tiers")
+}
+
+model PaymentStage {
+  id          String   @id @default(uuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  stageNumber Int
+  title       String
+  description String
+  percentage  Float
+  amount      Float
+  isCompleted Boolean  @default(false)
+  dueDate     DateTime?
+
+  @@map("payment_stages")
+}

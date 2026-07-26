@@ -1,0 +1,206 @@
+// ============================================================
+// PROJECT BUNIYAD – PRISMA DATABASE SCHEMA (RC1)
+// PostgreSQL models with database performance indexes (@index)
+// ============================================================
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPERADMIN
+}
+
+enum QualityTier {
+  Essential
+  Premium
+  Luxury
+}
+
+enum ProjectStatus {
+  DRAFT
+  PLANNED
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+}
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  phone     String?
+  name      String
+  role      Role      @default(USER)
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  projects  Project[]
+  auditLogs AuditLog[]
+
+  @@index([email])
+}
+
+model Project {
+  id              String                @id @default(uuid())
+  name            String
+  ownerId         String
+  owner           User                  @relation(fields: [ownerId], references: [id])
+  city            String
+  authority       String
+  status          ProjectStatus         @default(PLANNED)
+  configuration   ProjectConfiguration?
+  calculation     CalculationResult?
+  boqItems        BOQItem[]
+  paymentSchedule PaymentSchedule[]
+  procurementList ProcurementList[]
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+
+  @@index([ownerId])
+  @@index([city])
+  @@index([status])
+}
+
+model ProjectConfiguration {
+  id             String      @id @default(uuid())
+  projectId      String      @unique
+  project        Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  plotLength     Float
+  plotWidth      Float
+  houseType      String
+  floors         Int
+  parkingType    String
+  carCount       Int
+  bikeCount      Int
+  evCharging     Boolean
+  liftRequired   Boolean
+  roomsJson      Json
+  qualityTier    QualityTier
+  materialBrands Json
+
+  @@index([projectId])
+}
+
+model CalculationResult {
+  id              String   @id @default(uuid())
+  projectId       String   @unique
+  project         Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  totalBUASqFt    Float
+  totalCostINR    Float
+  costPerSqFt     Float
+  steelTonnes     Float
+  cementBags      Int
+  concreteCuM     Float
+  timelineMonths  Int
+  budgetBreakdown Json
+  quantitiesJson  Json
+  calculatedAt    DateTime @default(now())
+
+  @@index([projectId])
+}
+
+model BOQItem {
+  id          String   @id @default(uuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  code        String
+  category    String
+  description String
+  unit        String
+  quantity    Float
+  unitRate    Float
+  amount      Float
+  brand       String
+  remarks     String?
+
+  @@index([projectId])
+  @@index([category])
+}
+
+model PaymentSchedule {
+  id               String   @id @default(uuid())
+  projectId        String
+  project          Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  stage            Int
+  title            String
+  description      String
+  percentage       Float
+  amount           Float
+  targetDate       String
+  status           String
+  bankDisbursement Boolean  @default(false)
+
+  @@index([projectId])
+}
+
+model ProcurementList {
+  id            String   @id @default(uuid())
+  projectId     String
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  trade         String
+  item          String
+  brand         String
+  specification String
+  quantity      Float
+  unit          String
+  unitRate      Float
+  totalCost     Float
+  supplierNote  String?
+  leadTimeDays  Int      @default(3)
+
+  @@index([projectId])
+}
+
+model MaterialCategory {
+  id       String            @id @default(uuid())
+  name     String            @unique
+  unit     String
+  brands   MaterialBrand[]
+  products MaterialProduct[]
+}
+
+model MaterialBrand {
+  id         String           @id @default(uuid())
+  categoryId String
+  category   MaterialCategory @relation(fields: [categoryId], references: [id])
+  name       String
+  tier       QualityTier
+  unitRate   Float
+  warranty   String?
+  isActive   Boolean          @default(true)
+
+  @@index([categoryId])
+}
+
+model MaterialProduct {
+  id          String           @id @default(uuid())
+  categoryId  String
+  category    MaterialCategory @relation(fields: [categoryId], references: [id])
+  name        String
+  brand       String
+  unit        String
+  rate        Float
+  description String?
+  isAvailable Boolean          @default(true)
+
+  @@index([categoryId])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  details   Json?
+  timestamp DateTime @default(now())
+
+  @@index([userId])
+  @@index([timestamp])
+}
