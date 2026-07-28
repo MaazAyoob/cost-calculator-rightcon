@@ -19,7 +19,7 @@ export const Step10LoadingExperience: React.FC = () => {
     'Preparing 10-Month Milestone Budget...',
     'Building Material Specification Matrix...',
     'Creating Bank-Ready Payment Schedule...',
-    'Finalising Project Buniyad Dashboard Workspace...',
+    'Finalising Cost Calculator Dashboard Workspace...',
   ];
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export const Step10LoadingExperience: React.FC = () => {
 
     const redirectTimer = setTimeout(() => {
       addToast({
-        title: 'Project Buniyad Engine Ready!',
+        title: 'Cost Calculator Engine Ready!',
         description: 'BOQ, materials, budget, and payment roadmap generated successfully.',
         type: 'success',
       });
@@ -56,7 +56,7 @@ export const Step10LoadingExperience: React.FC = () => {
       {/* Animated Brand Logo Icon */}
       <div className="relative">
         <div className="w-20 h-20 rounded-3xl bg-blue-600 text-white flex items-center justify-center text-3xl font-extrabold shadow-soft-xl animate-pulse">
-          B
+          C
         </div>
         <div className="absolute -bottom-2 -right-2 p-2 bg-emerald-500 text-white rounded-xl shadow-soft-sm">
           <Sparkles className="w-5 h-5" />
@@ -65,7 +65,7 @@ export const Step10LoadingExperience: React.FC = () => {
 
       <div className="space-y-2">
         <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Engineering Your Dream Home</h2>
-        <p className="text-xs text-slate-500">Project Buniyad Calculation Engine is compiling your baseline BOQ...</p>
+        <p className="text-xs text-slate-500">Cost Calculator Engine is compiling your baseline BOQ...</p>
       </div>
 
       {/* Message Carousel */}

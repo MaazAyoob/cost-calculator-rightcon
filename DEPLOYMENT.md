@@ -1,10 +1,10 @@
-# Project Buniyad – Cloud Deployment & Architecture Guide
+# Cost Calculator – Cloud Deployment & Architecture Guide
 
 ---
 
 ## 🏗 System Architecture Overview
 
-Project Buniyad is an enterprise-grade SaaS platform built with:
+Cost Calculator is an enterprise-grade SaaS platform built with:
 - **Frontend**: Vite + React 19 + TypeScript + Tailwind v4 (Deployed on **Vercel** / **Netlify**)
 - **Backend API**: Express.js + TypeScript + Node.js (Deployed on **Railway** / **Render**)
 - **Database**: PostgreSQL with Prisma ORM (Provisioned on **Supabase** / **Neon**)
@@ -16,8 +16,8 @@ Project Buniyad is an enterprise-grade SaaS platform built with:
 
 ### Frontend (`/.env`)
 ```env
-VITE_API_URL=https://api.buniyad.app/api/v1
-VITE_APP_NAME=Project Buniyad
+VITE_API_URL=https://api.costcalculator.app/api/v1
+VITE_APP_NAME=Cost Calculator
 ```
 
 ### Backend (`/server/.env`)
@@ -25,9 +25,9 @@ VITE_APP_NAME=Project Buniyad
 PORT=4000
 NODE_ENV=production
 DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[REF].supabase.co:5432/postgres
-JWT_SECRET=super-secret-production-jwt-key-buniyad-2026
+JWT_SECRET=super-secret-production-jwt-key-cost-calculator-2026
 JWT_EXPIRES_IN=7d
-CORS_ORIGIN=https://buniyad.app
+CORS_ORIGIN=https://costcalculator.app
 ```
 
 ---
@@ -62,7 +62,7 @@ CORS_ORIGIN=https://buniyad.app
 2. Framework Preset: **Vite**.
 3. Build Command: `npm run build`.
 4. Output Directory: `dist`.
-5. Set `VITE_API_URL` to your live Railway API URL (e.g. `https://api.buniyad.app/api/v1`).
+5. Set `VITE_API_URL` to your live Railway API URL (e.g. `https://api.costcalculator.app/api/v1`).
 
 ---
 

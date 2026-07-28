@@ -11,7 +11,7 @@ router.use('/download', downloadRoutes);
 router.get('/health', (_req: Request, res: Response) => {
   res.json({
     status: 'online',
-    platform: 'Project Buniyad API Engine v1.0.0',
+    platform: 'Cost Calculator API Engine v1.0.0',
     timestamp: new Date().toISOString(),
   });
 });

@@ -27,7 +27,7 @@ export const DESIGN_TOKENS = {
 };
 
 export const APP_CONFIG = {
-  name: 'Project Buniyad',
+  name: 'Cost Calculator',
   subtitle: 'Home Construction Planning Platform',
   tagline: "India's Premier Architecture & Construction Cost Intelligence Engine",
   version: '1.0.0-mvp',

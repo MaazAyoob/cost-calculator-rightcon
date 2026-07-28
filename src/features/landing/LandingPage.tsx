@@ -86,7 +86,7 @@ export const LandingPage: React.FC = () => {
             </h1>
 
             <p className="text-slate-300 text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
-              Project Buniyad gives Indian homeowners total financial clarity — precise material quantities, IS-code accurate BOQ, stage-linked milestones, and bank-loan ready reports. Before a single brick is laid.
+              Cost Calculator gives Indian homeowners total financial clarity — precise material quantities, IS-code accurate BOQ, stage-linked milestones, and bank-loan ready reports. Before a single brick is laid.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">

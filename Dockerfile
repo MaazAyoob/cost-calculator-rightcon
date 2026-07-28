@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for Project Buniyad Frontend
+# Multi-stage Dockerfile for Cost Calculator Frontend
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./

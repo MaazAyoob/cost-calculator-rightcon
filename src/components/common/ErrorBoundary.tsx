@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('[Buniyad UI ErrorBoundary Caught]', error, errorInfo);
+    console.error('[Cost Calculator UI ErrorBoundary Caught]', error, errorInfo);
   }
 
   private handleReset = () => {

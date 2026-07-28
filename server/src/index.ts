@@ -19,7 +19,7 @@ app.use(errorHandler);
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(ENV.PORT, () => {
-    console.log(`[Buniyad API Engine] Running at http://localhost:${ENV.PORT}/api/v1/health`);
+    console.log(`[Cost Calculator API Engine] Running at http://localhost:${ENV.PORT}/api/v1/health`);
   });
 }
 

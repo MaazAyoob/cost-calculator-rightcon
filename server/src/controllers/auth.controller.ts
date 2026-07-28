@@ -11,7 +11,7 @@ export async function login(req: Request, res: Response) {
   }
 
   // Demo fallback for mock/dev environment
-  if (email === 'admin@buniyad.app' && password === 'Admin@123456') {
+  if (email === 'admin@costcalculator.app' && password === 'Admin@123456') {
     const token = jwt.sign({ id: 'admin-1', email, role: 'ADMIN' }, ENV.JWT_SECRET, { expiresIn: '7d' });
     return res.json({
       token,
@@ -27,7 +27,7 @@ export async function login(req: Request, res: Response) {
     });
   }
 
-  return res.status(401).json({ error: 'Invalid credentials. Use admin@buniyad.app / Admin@123456' });
+  return res.status(401).json({ error: 'Invalid credentials. Use admin@costcalculator.app / Admin@123456' });
 }
 
 export async function register(req: Request, res: Response) {

@@ -13,7 +13,7 @@ export async function downloadPDF(req: Request, res: Response) {
 
   const html = generatePDFHTML(sampleData);
   res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Content-Disposition', 'inline; filename="buniyad-construction-report.html"');
+  res.setHeader('Content-Disposition', 'inline; filename="cost-calculator-construction-report.html"');
   res.send(html);
 }
 
@@ -27,7 +27,7 @@ export async function downloadCSV(req: Request, res: Response) {
     ];
     const csv = generateMaterialCSV(mockMaterials);
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="buniyad-materials.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="cost-calculator-materials.csv"');
     return res.send(csv);
   }
 
@@ -37,7 +37,7 @@ export async function downloadCSV(req: Request, res: Response) {
   ];
   const csv = generateBOQCSV(mockBOQ);
   res.setHeader('Content-Type', 'text/csv');
-  res.setHeader('Content-Disposition', 'attachment; filename="buniyad-boq.csv"');
+  res.setHeader('Content-Disposition', 'attachment; filename="cost-calculator-boq.csv"');
   return res.send(csv);
 }
 
@@ -52,6 +52,6 @@ export async function downloadExcel(req: Request, res: Response) {
 
   const excelContent = generateExcelWorkbook(mockBOQ, mockHeads);
   res.setHeader('Content-Type', 'application/vnd.ms-excel');
-  res.setHeader('Content-Disposition', 'attachment; filename="buniyad-construction-boq.xls"');
+  res.setHeader('Content-Disposition', 'attachment; filename="cost-calculator-construction-boq.xls"');
   res.send(excelContent);
 }

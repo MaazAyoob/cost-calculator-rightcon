@@ -1,4 +1,4 @@
-# Project Buniyad — Home Construction Planning & Engineering Platform
+# Cost Calculator — Home Construction Planning & Engineering Platform
 
 > **Production SaaS Platform for Homeowners, Architects & Contractors in India.**  
 > *Deterministic IS 456 & IS 13920 Calculation Engine · Bank-Ready BOQ & Payment Schedules · Real-Time Regional Material Price Indices*
@@ -7,7 +7,7 @@
 
 ## 🌟 Executive Summary
 
-Project Buniyad is NOT a simple marketing site or CRUD dashboard. It is an enterprise-grade SaaS application designed to empower Indian homeowners to configure every architectural, structural, material, and electrical detail of their dream home before ground breaking.
+Cost Calculator is NOT a simple marketing site or CRUD dashboard. It is an enterprise-grade SaaS application designed to empower Indian homeowners to configure every architectural, structural, material, and electrical detail of their dream home before ground breaking.
 
 ### Core Capabilities
 - **10-Step Interactive Guided Configurator**: Visual Tesla-style wizard with live instant recalculation (<2ms).
@@ -155,4 +155,4 @@ Refer to [`DEPLOYMENT.md`](file:///c:/Users/Avita/Desktop/Programming/big%20bngl
 
 ---
 
-© 2026 Project Buniyad · Rightcon Constructions. All Rights Reserved.
+© 2026 Cost Calculator · Rightcon Constructions. All Rights Reserved.

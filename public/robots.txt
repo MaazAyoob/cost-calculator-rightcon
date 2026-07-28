@@ -8,4 +8,4 @@ Allow: /report
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://buniyad.app/sitemap.xml
+Sitemap: https://costcalculator.app/sitemap.xml

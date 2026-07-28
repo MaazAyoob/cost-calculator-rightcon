@@ -41,7 +41,7 @@ export const Step9Review: React.FC = () => {
       <Card className="p-6 bg-slate-900 text-white shadow-soft-xl border border-slate-800 space-y-4">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
           <div>
-            <span className="text-[10px] font-extrabold text-blue-400 uppercase tracking-wider">Project Buniyad Spec</span>
+            <span className="text-[10px] font-extrabold text-blue-400 uppercase tracking-wider">Cost Calculator Spec</span>
             <h3 className="text-xl font-bold">{houseType} • G+{floors - 1} Elevation</h3>
           </div>
           <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 rounded-full text-xs font-bold w-fit">

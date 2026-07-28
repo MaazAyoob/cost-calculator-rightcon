@@ -52,11 +52,11 @@ export const DashboardHeader: React.FC = () => {
         <div className="flex items-center gap-5">
           <div onClick={() => navigate('/')} className="flex items-center gap-2.5 cursor-pointer">
             <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-extrabold text-sm shadow-soft-xs">
-              B
+              C
             </div>
             <div className="hidden sm:block">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-slate-900 tracking-tight text-sm">BUNIYAD</span>
+                <span className="font-extrabold text-slate-900 tracking-tight text-sm">COST CALCULATOR</span>
                 <span className="px-1.5 py-0.5 text-[9px] font-extrabold bg-blue-50 text-blue-700 rounded border border-blue-200/60 uppercase">
                   PRO
                 </span>

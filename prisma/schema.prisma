@@ -1,4 +1,4 @@
-// Project Buniyad - Prisma Database Schema Definition
+// Cost Calculator - Prisma Database Schema Definition
 
 datasource db {
   provider = "postgresql"

@@ -22,11 +22,11 @@ export const TopNavigation: React.FC = () => {
 
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black tracking-wider shadow-soft-xs">
-            B
+            C
           </div>
           <div className="hidden sm:block">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-slate-900 tracking-tight text-base">BUNIYAD</span>
+              <span className="font-extrabold text-slate-900 tracking-tight text-base">COST CALCULATOR</span>
               <span className="px-1.5 py-0.5 text-[10px] font-bold bg-blue-50 text-blue-700 rounded border border-blue-200/60 uppercase">
                 PRO MVP
               </span>

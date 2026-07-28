@@ -84,9 +84,9 @@ export const ReportPage: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-black">
-                B
+                C
               </div>
-              <span className="font-extrabold text-slate-900 text-xl tracking-tight">PROJECT BUNIYAD</span>
+              <span className="font-extrabold text-slate-900 text-xl tracking-tight">COST CALCULATOR</span>
             </div>
             <p className="text-xs text-slate-500 font-medium">Home Construction Planning & Engineering Platform</p>
             <p className="text-[11px] text-slate-400 mt-1 font-mono">Report ID: {report.projectId} | Engine v{report.engineVersion}</p>
@@ -306,7 +306,7 @@ export const ReportPage: React.FC = () => {
 
         {/* Report Footer Verification */}
         <div className="pt-8 border-t border-slate-200 flex justify-between items-center text-[11px] text-slate-400">
-          <span>Project Buniyad Deterministic Engine v1.0.0</span>
+          <span>Cost Calculator Deterministic Engine v1.0.0</span>
           <span>Certified Bank-Loan Disbursement Specification</span>
         </div>
       </Card>

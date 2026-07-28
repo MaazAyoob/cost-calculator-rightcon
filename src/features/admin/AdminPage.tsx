@@ -224,8 +224,8 @@ export const AdminPage: React.FC = () => {
             <CardContent>
               <div className="space-y-2 text-xs">
                 {[
-                  { time: '2 mins ago', action: 'Material Rate Update', user: 'admin@buniyad.app', detail: 'TMT Steel rate updated to ₹64,000/tonne' },
-                  { time: '14 mins ago', action: 'PDF Report Export', user: 'client@rightcon.in', detail: 'Generated executive report ref BUN-2026-8912' },
+                  { time: '2 mins ago', action: 'Material Rate Update', user: 'admin@costcalculator.app', detail: 'TMT Steel rate updated to ₹64,000/tonne' },
+                  { time: '14 mins ago', action: 'PDF Report Export', user: 'client@rightcon.in', detail: 'Generated executive report ref CC-2026-8912' },
                   { time: '1 hour ago', action: 'New Project Saved', user: 'client@rightcon.in', detail: 'Created 4BHK Duplex in HSR Layout (3,850 sq ft)' },
                 ].map((log, idx) => (
                   <div key={idx} className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex justify-between items-center">

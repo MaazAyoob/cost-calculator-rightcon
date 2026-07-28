@@ -104,14 +104,14 @@ export const DownloadsTab: React.FC = () => {
         window.open(`${API_BASE}/download/pdf?name=Dream%20Home%20Villa&city=Bangalore`, '_blank');
       } else if (id === 'dl-2') {
         // Excel — trigger file download
-        triggerAnchorDownload(`${API_BASE}/download/excel`, 'buniyad_report.xlsx');
+        triggerAnchorDownload(`${API_BASE}/download/excel`, 'cost_calculator_report.xlsx');
       } else if (id === 'dl-3') {
         // CSV — trigger file download
-        triggerAnchorDownload(`${API_BASE}/download/csv?type=boq`, 'buniyad_boq.csv');
+        triggerAnchorDownload(`${API_BASE}/download/csv?type=boq`, 'cost_calculator_boq.csv');
       } else if (id === 'dl-4') {
         // Shareable link — simulated (no auth system yet)
         await new Promise((r) => setTimeout(r, 1200));
-        setSharedLink('https://buniyad.app/share/BUN-2026-0891-x7f3k');
+        setSharedLink('https://costcalculator.app/share/CC-2026-0891-x7f3k');
       }
 
       // Small delay so user can see the spinner briefly

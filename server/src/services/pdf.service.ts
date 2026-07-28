@@ -34,7 +34,7 @@ export function generatePDFHTML(projectData: any): string {
 <body>
   <div class="header">
     <div>
-      <div class="logo">PROJECT BUNIYAD</div>
+      <div class="logo">COST CALCULATOR</div>
       <div style="font-size: 12px; color: #64748b;">Home Construction Planning & Engineering Platform</div>
     </div>
     <div style="text-align: right;">
@@ -92,7 +92,7 @@ export function generatePDFHTML(projectData: any): string {
   </table>
 
   <div class="footer">
-    <span>Project Buniyad Deterministic Engineering Engine v1.0</span>
+    <span>Cost Calculator Deterministic Engineering Engine v1.0</span>
     <span>Certified IS 456 & NBC 2016 Compliant</span>
   </div>
 </body>

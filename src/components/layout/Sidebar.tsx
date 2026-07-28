@@ -137,7 +137,7 @@ export const Sidebar: React.FC = () => {
       {/* Collapse Toggle Footer */}
       <div className="p-3 border-t border-slate-100 flex items-center justify-between">
         {!isSidebarCollapsed && (
-          <span className="text-[11px] text-slate-400 font-medium px-2">Project Buniyad</span>
+          <span className="text-[11px] text-slate-400 font-medium px-2">Cost Calculator</span>
         )}
         <button
           onClick={toggleSidebarCollapse}

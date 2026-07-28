@@ -7,9 +7,9 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = "Project Buniyad | India's Premier Home Construction Planning SaaS",
+  title = "Cost Calculator | Home Construction Planning & Estimation",
   description = "Configure every aspect of your home before construction begins. Deterministic IS-code cost estimates, material quantities, BOQ, and payment roadmaps.",
-  canonicalUrl = "https://buniyad.app/",
+  canonicalUrl = "https://costcalculator.app/",
 }) => {
   useEffect(() => {
     document.title = title;

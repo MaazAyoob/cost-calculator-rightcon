@@ -1,5 +1,5 @@
 // ============================================================
-// PROJECT BUNIYAD – DATABASE SEED SCRIPT
+// COST CALCULATOR – DATABASE SEED SCRIPT
 // Populates default admin user, initial material categories,
 // brand catalogue, and sample project data.
 // ============================================================
@@ -10,15 +10,15 @@ import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function seed() {
-  console.log('[Seed] Starting Buniyad database seed...');
+  console.log('[Seed] Starting Cost Calculator database seed...');
 
   // 1. Create Default Admin User
   const adminPasswordHash = await bcrypt.hash('Admin@123456', 10);
   const admin = await prisma.user.upsert({
-    where: { email: 'admin@buniyad.app' },
+    where: { email: 'admin@costcalculator.app' },
     update: {},
     create: {
-      email: 'admin@buniyad.app',
+      email: 'admin@costcalculator.app',
       name: 'System Admin',
       phone: '+91 9876543210',
       role: 'ADMIN',

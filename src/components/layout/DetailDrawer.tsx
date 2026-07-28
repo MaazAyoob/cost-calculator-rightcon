@@ -89,7 +89,7 @@ export const DetailDrawer: React.FC = () => {
 
             {/* Footer */}
             <div className="p-4 border-t border-slate-100 bg-slate-50/50 flex justify-between items-center">
-              <span className="text-xs text-slate-400">Buniyad Spec v1.0</span>
+              <span className="text-xs text-slate-400">Cost Calculator Spec v1.0</span>
               <button
                 onClick={closeDrawer}
                 className="inline-flex items-center text-xs font-medium text-blue-600 hover:text-blue-700 gap-1"

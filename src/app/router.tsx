@@ -29,7 +29,7 @@ const NotFoundPage = lazy(() =>
 const PageFallback = () => (
   <div className="h-[70vh] flex flex-col items-center justify-center space-y-3">
     <Loader size={36} />
-    <p className="text-xs text-slate-500 font-medium animate-pulse">Loading Buniyad Workspace...</p>
+    <p className="text-xs text-slate-500 font-medium animate-pulse">Loading Cost Calculator Workspace...</p>
   </div>
 );
 

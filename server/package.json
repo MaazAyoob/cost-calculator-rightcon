@@ -1,7 +1,7 @@
 {
-  "name": "buniyad-server",
+  "name": "cost-calculator-server",
   "version": "1.0.0",
-  "description": "Project Buniyad API Engine & Calculation Server",
+  "description": "Cost Calculator API Engine & Calculation Server",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
